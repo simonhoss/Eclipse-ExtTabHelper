@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+<extension
+		point="org.eclipse.ui.views">
+	<category
+			id="ExtTabHelper"
+			name="Ext Tabs">
+	</category>
+	<view
+			category="ExtTabHelper"
+			class="exttabhelper.views.ButtonTabs"
+			icon="icons/sample.gif"
+			id="exttabhelper.views.ButtonTabs"
+			name="Ext Tabs View">
+	</view>
+</extension>
+<extension
+		point="org.eclipse.ui.perspectiveExtensions">
+	<perspectiveExtension
+			targetID="org.eclipse.jdt.ui.JavaPerspective">
+		<view
+			id="exttabhelper.views.SampleView"
+			ratio="0.5"
+			relationship="right"
+			relative="org.eclipse.ui.views.ProblemView">
+		</view>
+	</perspectiveExtension>
+</extension>
+<extension
+      point="org.eclipse.ui.commands">
+   <category
+         ikd="ExtTabHelper.commands.category"
+         name="Ext Tabs">
+   </category>
+   <command
+         categoryId="ExtTabHelper.commands.category"
+         id="ExtTabHelper.commands.showTabList"
+         name="Ext Tab List">
+   </command>
+</extension>
+<extension
+      point="org.eclipse.ui.handlers">
+   <handler
+         class="exttabhelper.handlers.ShowTabList"
+         commandId="ExtTabHelper.commands.showTabList">
+   </handler>
+</extension>
+<extension
+      point="org.eclipse.ui.bindings">
+   <key
+         commandId="ExtTabHelper.commands.showTabList"
+         contextId="org.eclipse.ui.contexts.window"
+         schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+         sequence="M1+5">
+   </key>
+</extension>
+
+
+</plugin>

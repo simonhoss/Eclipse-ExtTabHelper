@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Require-Bundle: org.eclipse.ui,org.eclipse.core.runtime,org.eclipse.ui
+ .ide;bundle-version="3.8.1",org.eclipse.core.resources;bundle-version
+ ="3.8.1",org.eclipse.debug.ui;bundle-version="3.8.1",org.eclipse.ui.v
+ iews;bundle-version="3.6.100"
+Bundle-ActivationPolicy: lazy
+Bundle-Version: 1.0.0.201302251633
+Bundle-Name: ExtTabHelper
+Bundle-Activator: exttabhelper.Activator
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: ExtTabHelper;singleton:=true
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+
+
