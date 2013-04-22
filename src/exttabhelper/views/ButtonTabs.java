@@ -37,47 +37,45 @@ public class ButtonTabs extends ViewPart {
 		this.layout = new GridLayout(1, false);
 		parent.setLayout(this.layout);
 
-		PlatformUI.getWorkbench().getActiveWorkbenchWindow()
-				.addPageListener(new IPageListener() {
-					@Override
-					public void pageOpened(IWorkbenchPage arg0) {
-						ButtonTabs.this.generateButtonTabs();
-					}
+		PlatformUI.getWorkbench().getActiveWorkbenchWindow().addPageListener(new IPageListener() {
+			@Override
+			public void pageOpened(IWorkbenchPage arg0) {
+				ButtonTabs.this.generateButtonTabs();
+			}
 
-					@Override
-					public void pageClosed(IWorkbenchPage arg0) {
-					}
+			@Override
+			public void pageClosed(IWorkbenchPage arg0) {
+			}
 
-					@Override
-					public void pageActivated(IWorkbenchPage arg0) {
-						ButtonTabs.this.generateButtonTabs();
-					}
-				});
-		PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage()
-				.addPartListener(new IPartListener() {
-					@Override
-					public void partOpened(IWorkbenchPart arg0) {
-						ButtonTabs.this.generateButtonTabs();
-					}
+			@Override
+			public void pageActivated(IWorkbenchPage arg0) {
+				ButtonTabs.this.generateButtonTabs();
+			}
+		});
+		PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().addPartListener(new IPartListener() {
+			@Override
+			public void partOpened(IWorkbenchPart arg0) {
+				ButtonTabs.this.generateButtonTabs();
+			}
 
-					@Override
-					public void partDeactivated(IWorkbenchPart arg0) {
-					}
+			@Override
+			public void partDeactivated(IWorkbenchPart arg0) {
+			}
 
-					@Override
-					public void partClosed(IWorkbenchPart arg0) {
-						ButtonTabs.this.generateButtonTabs();
-					}
+			@Override
+			public void partClosed(IWorkbenchPart arg0) {
+				ButtonTabs.this.generateButtonTabs();
+			}
 
-					@Override
-					public void partBroughtToTop(IWorkbenchPart arg0) {
-					}
+			@Override
+			public void partBroughtToTop(IWorkbenchPart arg0) {
+			}
 
-					@Override
-					public void partActivated(IWorkbenchPart arg0) {
-						ButtonTabs.this.generateButtonTabs();
-					}
-				});
+			@Override
+			public void partActivated(IWorkbenchPart arg0) {
+				ButtonTabs.this.generateButtonTabs();
+			}
+		});
 		generateButtonTabs();
 	}
 
@@ -97,11 +95,9 @@ public class ButtonTabs extends ViewPart {
 			return;
 		if (PlatformUI.getWorkbench().getActiveWorkbenchWindow() == null)
 			return;
-		if (PlatformUI.getWorkbench().getActiveWorkbenchWindow()
-				.getActivePage() == null)
+		if (PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage() == null)
 			return;
-		if (PlatformUI.getWorkbench().getActiveWorkbenchWindow()
-				.getActivePage().getEditorReferences() == null) {
+		if (PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getEditorReferences() == null) {
 			return;
 		}
 		clearButtons();

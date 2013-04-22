@@ -48,6 +48,8 @@ public class SelectTab {
 			IEditorReference editor = arrayOfIEditorReference[i];
 			try {
 				IFile file = ResourceUtil.getFile(editor.getEditorInput());
+				if(file == null)
+					continue;
 				IPath path = file.getFullPath();
 				String pathString = path.toOSString();
 
